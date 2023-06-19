@@ -125,6 +125,7 @@ public class tictactoe {
                 break;
             }
             if(checkIfTie(table) == true){
+                printboard(table);  
                 System.out.println("Tie game! Game Over");
                 notDone = false;
                 break;
@@ -190,6 +191,7 @@ public class tictactoe {
                 break;
             }
             if(checkIfTie(table) == true){
+                printboard(table);  
                 System.out.println("Tie game! Game Over");
                 notDone = false;
                 break;
