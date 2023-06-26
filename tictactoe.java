@@ -58,8 +58,6 @@ public class tictactoe {
                            {'*','*','*'}
                         };  
         boolean notDone = true;
-        boolean playerRepeat1 = true;
-        boolean playerRepeat2 = true;
         int winner = 0;
         System.out.println("TICTACTOE game"); 
         Scanner sc = new Scanner(System.in);
@@ -77,12 +75,13 @@ public class tictactoe {
             }
             else if(isEleEmpty(table[row][col]) == true){
                 table[row][col] = 'O';
-                playerRepeat1 = false;
+                break;
             }else{
                 System.out.println("Position already occupied try again");
+                continue;
             }
             
-        }while(playerRepeat1);
+        }while(true);
         // win conditions for player 1
             if(winConPlayer1(table[0][0], table[0][1], table[0][2]) == true){
                 winner = 1;
@@ -144,12 +143,13 @@ public class tictactoe {
                 continue;
             }else if(isEleEmpty(table[row2][col2]) == true){
                 table[row2][col2] = 'X';
-                playerRepeat2 = false;
+                break;
             }else{
                 System.out.println("Position already occupied try again");
+                continue;
             }
             
-            }while(playerRepeat2);
+            }while(true);
             if(winConPlayer2(table[0][0], table[0][1], table[0][2]) == true){
                 winner = 2;
                 notDone = false;
